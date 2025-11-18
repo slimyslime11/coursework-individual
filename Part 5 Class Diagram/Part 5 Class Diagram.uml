@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_oQsrQMPrEfCn4dHKfu88hQ" name="Part 5 Class Diagram">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_oSKq4MPrEfCn4dHKfu88hQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_6EsNEMS2EfCA8ak4m4OOYg" name="Join/LeaveSocietyService">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_CgxBgMS3EfCA8ak4m4OOYg" name="ValidationHandler" visibility="public"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_FvrNgMS3EfCA8ak4m4OOYg" name="MembershipRepository"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_J4wiwMS3EfCA8ak4m4OOYg" name="PromotionHandler"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_QXikEMS3EfCA8ak4m4OOYg" name="EventLogger"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_rfELAMS3EfCA8ak4m4OOYg" name="RequestJoin( in studnetID : String, in societyId: String) "/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Ku_xwMS4EfCA8ak4m4OOYg" name=" RequestLeave( in studentID : String, in societyId : string )"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_SAdNMMS4EfCA8ak4m4OOYg" name="ValidateJoin( in studentId : String, in societyId : String) bool"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_jq6cwMS4EfCA8ak4m4OOYg" name="ValidateLeave (in studentId:String, in societyId : String)"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_DnjYgMS5EfCA8ak4m4OOYg" name="SubscribeToSociety( in studentId:String, in societyId: string)"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_SVOG0MS5EfCA8ak4m4OOYg" name="CheckAffliliation(in studentId:String, in societyId: String"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_X0snQMS5EfCA8ak4m4OOYg" name="RecordEvent( event:SocietyEvent ): void "/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_hq3bIMS5EfCA8ak4m4OOYg" name="MembershipRepository">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_7mVXQMS8EfCA8ak4m4OOYg" name="MembershipEdit : int">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_HY3xMMS9EfCA8ak4m4OOYg" name="LastUpdated : Date" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_9uuxsMS9EfCA8ak4m4OOYg" name="save ( StudentId">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_hDxzsMS-EfCA8ak4m4OOYg" name="SavedId">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_qfW9UMS-EfCA8ak4m4OOYg" name="LiteralString1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_xVnDcMS-EfCA8ak4m4OOYg" name="DeleteId">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_zNBRAMS-EfCA8ak4m4OOYg" name="studentID">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <defaultValue xmi:type="uml:LiteralNull" xmi:id="__BHKIMS-EfCA8ak4m4OOYg" name="Void"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_C_Y9kMS_EfCA8ak4m4OOYg" name="isMember">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ev_YgMS_EfCA8ak4m4OOYg" name="studentID">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_K3e7MMS_EfCA8ak4m4OOYg" name="societyID">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_lJHqsMS5EfCA8ak4m4OOYg" name="ValidationHandler">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_RqoqAMS_EfCA8ak4m4OOYg" name="NumActiveSocieties">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_0g43MMS_EfCA8ak4m4OOYg" name="LiteralInteger1" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_GPfm8MTAEfCA8ak4m4OOYg" name="CanJoin">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Hun3YMTAEfCA8ak4m4OOYg" name="StudentID">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_QNTT4MTAEfCA8ak4m4OOYg" name="societyID">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_SLNyEMTAEfCA8ak4m4OOYg" name="StudentUnionCheckID">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_MOAXUMTBEfCA8ak4m4OOYg" name="Success" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NztJ0MTBEfCA8ak4m4OOYg" name="LiteralInteger1" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NztJ0cTBEfCA8ak4m4OOYg" name="LiteralUnlimitedNatural1" value="1"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_OQS_MMTBEfCA8ak4m4OOYg" name="LiteralBoolean" value="true"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_XW83IMTAEfCA8ak4m4OOYg" name="CanLeave">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZafcMMTAEfCA8ak4m4OOYg" name="studentID">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_bsWxIMTAEfCA8ak4m4OOYg" name="SocietyID">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_joBAIMTAEfCA8ak4m4OOYg" name="string"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_7t7QMMTAEfCA8ak4m4OOYg" name="success" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_AChR4MTBEfCA8ak4m4OOYg" name="LiteralBoolean" value="true"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_C-0vIMS6EfCA8ak4m4OOYg" name="SocietySearchService">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_zi5XMMS6EfCA8ak4m4OOYg" name="UnionFilter : Boolean"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_2zC5UMS6EfCA8ak4m4OOYg" name="SearchAllSociety : List/Array"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_mF6_QMS7EfCA8ak4m4OOYg" name="SearchSocietyName : List"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_JzKUQMS7EfCA8ak4m4OOYg" name="Search (query:String ) :List&lt;Society>"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_KJyrkMS7EfCA8ak4m4OOYg" name="FilterUnion(Societies:List, unionId:String)"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_H-uXoMS6EfCA8ak4m4OOYg" name="EventLogger">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_eq5isMS8EfCA8ak4m4OOYg" name="EventList : List"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_QhGoYMS6EfCA8ak4m4OOYg" name="LogJoin( event:SocietyEvent) Void "/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Th0AUMS6EfCA8ak4m4OOYg" name="LogLeaveSociety(event:SocietyEvent) Void"/>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_PeMkcMS7EfCA8ak4m4OOYg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PeNykMS7EfCA8ak4m4OOYg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Model>
